@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="Theme.Monaco" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/monaco_primary</item>
+        <item name="colorPrimaryVariant">@color/monaco_primary</item>
+        <item name="colorSecondary">@color/monaco_accent</item>
+        <item name="android:windowBackground">@color/monaco_bg</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Monaco" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+</resources>

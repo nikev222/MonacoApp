@@ -1,0 +1,19 @@
+<resources>
+    <!-- Strings generales -->
+    <string name="app_name">Monaco</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">Bienvenido a Monaco</string>
+    <string name="welcome_sub">Tu tienda online de confianza</string>
+    <string name="comenzar">Comenzar</string>
+
+    <!-- Menu -->
+    <string name="menu_title">Menú Principal</string>
+    <string name="registrar">Registrar</string>
+    <string name="login">Login</string>
+    <string name="perfil">Perfil</string>
+
+    <!-- Navigation (si usas NavGraph) -->
+    <string name="first_fragment_label">Primer Fragmento</string>
+    <string name="second_fragment_label">Segundo Fragmento</string>
+</resources>
