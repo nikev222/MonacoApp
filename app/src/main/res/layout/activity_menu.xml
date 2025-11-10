@@ -1,44 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="24dp"
-    android:background="@color/gray_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/bg_light_purple"
+    tools:context=".activities.MenuActivity">
 
     <TextView
-        android:text="@string/menu_title"
+        android:id="@+id/tvWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_cat"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/monaco_blue"
-        android:layout_marginBottom="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/purple_dark"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:text="@string/registrar"
-        android:backgroundTint="@color/monaco_blue"
-        android:textColor="@color/white"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProducts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:background="@drawable/recycler_background" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdminPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:text="@string/login"
-        android:backgroundTint="@color/monaco_gold"
+        android:text="@string/admin_productos"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        app:backgroundTint="@color/purple_main"
+        app:cornerRadius="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:id="@+id/btnPerfil"
-        android:text="@string/perfil"
-        android:backgroundTint="@color/monaco_blue"
+        android:text="@string/view_cart"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        app:backgroundTint="@color/purple_light"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="6dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoWelcome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/back_menu"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        app:backgroundTint="@color/purple_dark"
+        app:cornerRadius="12dp" />
+
 </LinearLayout>

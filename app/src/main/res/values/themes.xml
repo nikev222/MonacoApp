@@ -1,14 +1,22 @@
 <resources>
 
+    <!-- 🌙 Tema principal de la app -->
     <style name="Theme.Monaco" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/monaco_primary</item>
         <item name="colorPrimaryVariant">@color/monaco_primary</item>
         <item name="colorSecondary">@color/monaco_accent</item>
         <item name="android:windowBackground">@color/monaco_bg</item>
     </style>
-    <!-- Base application theme. -->
+
+    <!-- 🌞 Tema base alternativo (no se toca) -->
     <style name="Base.Theme.Monaco" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Personaliza aquí si lo deseas -->
     </style>
+
+    <!-- 🚫 Versión sin barra de título (para Splash, Bienvenida, etc.) -->
+    <style name="Theme.Monaco.NoActionBar" parent="Theme.Monaco">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

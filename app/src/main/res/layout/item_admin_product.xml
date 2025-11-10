@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@color/white"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
+
+    <!-- Imagen del producto -->
+    <ImageView
+        android:id="@+id/imageProduct"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_monaco"
+        android:background="@color/gray_bg"
+        android:contentDescription="@string/product_image" />
+
+    <!-- Sección central: nombre, descripción y precio -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_name"
+            android:textSize="16sp"
+            android:textColor="@color/text_dark" />
+
+        <TextView
+            android:id="@+id/tvProductDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_description"
+            android:textSize="14sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textSize="16sp"
+            android:textColor="@color/monaco_purple"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Botones a la derecha -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/button_edit"
+            android:layout_marginBottom="6dp"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:text="@string/delete"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/button_delete" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,38 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.monaco.app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 📸 Permisos para acceder a imágenes del almacenamiento -->
+    <!-- Compatibilidad con versiones anteriores y Android 13+ -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
-        android:icon="@drawable/_4"
-        android:roundIcon="@drawable/_4"
         android:allowBackup="true"
-        android:label="Monaco"
+        android:icon="@drawable/logo_monaco"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_monaco"
+        android:supportsRtl="true"
         android:theme="@style/Theme.Monaco">
 
+        <!-- SplashActivity: pantalla inicial -->
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Monaco" />
-        <activity
-            android:name=".SplashActivity"
+            android:name="com.monaco.app.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Monaco">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity" />
+
+        <!-- WelcomeActivity -->
+        <activity
+            android:name="com.monaco.app.activities.WelcomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco" />
+
+        <!-- LoginActivity -->
+        <activity
+            android:name="com.monaco.app.activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco" />
+
+        <!-- RegisterActivity -->
+        <activity
+            android:name="com.monaco.app.activities.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco" />
+
+        <!-- ProfileActivity -->
+        <activity
+            android:name="com.monaco.app.activities.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco" />
+
+        <!-- MenuActivity -->
+        <activity
+            android:name="com.monaco.app.activities.MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco" />
+
+        <activity
+            android:name="com.monaco.app.activities.AddProductActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco"/>
+
+        <activity
+            android:name="com.monaco.app.activities.AdminproductosActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco"/>
+
+        <activity
+            android:name="com.monaco.app.activities.EditProductActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco"/>
+
+        <activity
+            android:name="com.monaco.app.activities.CartActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco"/>
+
+        <activity
+            android:name="com.monaco.app.activities.UserManagementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Monaco"/>
+
     </application>
 
 </manifest>

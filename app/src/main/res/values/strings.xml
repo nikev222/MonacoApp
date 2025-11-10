@@ -1,19 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Strings generales -->
+    <!-- Generales -->
     <string name="app_name">Monaco</string>
+    <string name="welcome_message">Bienvenido a Monaco</string>
+    <string name="welcome_cat">Bienvenido al catalogo de Monaco</string>
+    <string name="logo_monaco">Logo de Monaco</string>
+    <string name="loading">Cargando...</string>
 
-    <!-- Welcome -->
-    <string name="welcome_title">Bienvenido a Monaco</string>
-    <string name="welcome_sub">Tu tienda online de confianza</string>
-    <string name="comenzar">Comenzar</string>
+    <!--  Carrito -->
+    <string name="cart_title">🛒 Carrito de Compras</string>
+    <string name="total">Total: $0.00</string>
+    <string name="clear_cart">Vaciar carrito</string>
+    <string name="back_menu">Volver</string>
+    <string name="view_cart">Ver carrito</string>
+    <string name="add_to_cart">Agregar al carrito</string>
 
-    <!-- Menu -->
-    <string name="menu_title">Menú Principal</string>
-    <string name="registrar">Registrar</string>
-    <string name="login">Login</string>
-    <string name="perfil">Perfil</string>
+    <!--  Perfil -->
+    <string name="profile_title">Perfil de Usuario</string>
+    <string name="profile_name">Nombre:</string>
+    <string name="profile_email">Email:</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="back">Volver</string>
 
-    <!-- Navigation (si usas NavGraph) -->
-    <string name="first_fragment_label">Primer Fragmento</string>
-    <string name="second_fragment_label">Segundo Fragmento</string>
+    <!--  Productos -->
+    <string name="admin_productos">Panel de Productos</string>
+    <string name="admin_title">Gestión de Productos</string>
+    <string name="btn_add_product">Agregar Producto</string>
+    <string name="btn_back_menu">Volver al Menú</string>
+    <string name="product_name">Nombre del producto</string>
+    <string name="product_description">Descripción del producto</string>
+    <string name="product_image">Imagen del producto</string>
+    <string name="hint_product_price">Precio</string>
+    <string name="price">$0.00</string>
+
+    <!-- ✏ Pantalla Editar Producto -->
+    <string name="edit_product_title">Editar producto</string>
+    <string name="btn_change_image">Cambiar imagen</string>
+    <string name="btn_save_changes">Guardar cambios</string>
+
+    <!--  Usuarios -->
+    <string name="user_name">Nombre Usuario</string>
+    <string name="user_email">email@dominio.com</string>
+    <string name="delete_user">Eliminar</string>
+    <string name="administrar_perfiles">Administrar Perfiles</string>
+
+    <!--  CRUD -->
+    <string name="save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="update">Guardar cambios</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+
+
+    <string name="login">Iniciar sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="enter">Entrar</string>
+    <string name="no_account">No tengo cuenta</string>
+    <string name="already_have_account">¿Ya tienes una cuenta?</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="phone">Teléfono</string>
+    <string name="full_name">Nombre completo</string>
+
+    <!--  Gestión de Perfiles -->
+    <string name="manage_profiles">Gestionar perfiles</string>
+    <string name="view_profile">Ver perfil</string>
+
+
+    <!--  Otros -->
+    <string name="first_fragment_label">Inicio</string>
+    <string name="second_fragment_label">Detalles</string>
+
 </resources>

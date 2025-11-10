@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="@color/background_light_purple">
+
+    <ImageView
+        android:id="@+id/imageProduct"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/subir_img"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/product_image"
+        android:background="@color/image_background"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/product_name"
+        android:textColorHint="@color/text_secondary"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/text_secondary"
+        android:hint="@string/product_description"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:hint="@string/hint_product_price"
+        android:inputType="numberDecimal"
+        android:textAllCaps="false"
+        android:textColorHint="@color/text_secondary"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginBottom="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/button_primary"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_cancel"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/button_secondary"
+        android:textColor="@color/white"/>
+</LinearLayout>
