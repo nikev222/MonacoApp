@@ -11,12 +11,15 @@ import com.monaco.app.data.models.User
 
 class UserAdapter(
     private val users: List<User>,
-    private val onDeleteClick: (Int) -> Unit
+    private val onDelete: (Int) -> Unit,
+    private val onEdit: (User) -> Unit
 ) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
-        val tvUserEmail: TextView = itemView.findViewById(R.id.tvUserEmail)
+        val tvName: TextView = itemView.findViewById(R.id.tvUserName)
+        val tvEmail: TextView = itemView.findViewById(R.id.tvUserEmail)
+        val tvPhone: TextView = itemView.findViewById(R.id.tvUserPhone)
+        val btnEdit: Button = itemView.findViewById(R.id.btnEditUser)
         val btnDelete: Button = itemView.findViewById(R.id.btnDeleteUser)
     }
 
@@ -28,13 +31,13 @@ class UserAdapter(
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = users[position]
-        holder.tvUserName.text = user.name
-        holder.tvUserEmail.text = user.email
+        holder.tvName.text = user.name
+        holder.tvEmail.text = user.email
+        holder.tvPhone.text = user.phone ?: "Sin teléfono"
 
-        holder.btnDelete.setOnClickListener {
-            onDeleteClick(user.id)
-        }
+        holder.btnEdit.setOnClickListener { onEdit(user) }
+        holder.btnDelete.setOnClickListener { onDelete(user.id) }
     }
 
-    override fun getItemCount(): Int = users.size
+    override fun getItemCount() = users.size
 }

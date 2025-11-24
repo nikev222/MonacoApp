@@ -53,7 +53,7 @@
                 android:id="@+id/textCartPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.00"
+                android:text="@string/price"
                 android:textSize="14sp"
                 android:textColor="@color/monaco_purple"
                 android:layout_marginTop="4dp" />

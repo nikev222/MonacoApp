@@ -31,18 +31,7 @@
         android:background="@drawable/recycler_background" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAdminPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/admin_productos"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif-medium"
-        app:backgroundTint="@color/purple_main"
-        app:cornerRadius="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="6dp" />
+
 
 
     <com.google.android.material.button.MaterialButton
@@ -53,9 +42,22 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:fontFamily="sans-serif"
-        app:backgroundTint="@color/purple_light"
+        app:backgroundTint="@color/purple_main"
         app:cornerRadius="12dp"
         android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPuntos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/puntos"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        app:backgroundTint="@color/monaco_purple"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="6dp" />
+
 
 
     <com.google.android.material.button.MaterialButton

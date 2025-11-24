@@ -26,7 +26,7 @@ class ProfileActivity : AppCompatActivity() {
         val btnBack = findViewById<Button>(R.id.btnBackWelcome)
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesionProfile)
 
-        // Mostrar datos si hay sesión
+
         if (session.isLoggedIn()) {
             val userId = session.getUserId()
             val user = userDAO.getAllUsers().find { it.id == userId }

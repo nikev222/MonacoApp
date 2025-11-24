@@ -25,7 +25,7 @@ class WelcomeActivity : AppCompatActivity() {
         val btnVerPerfil = findViewById<Button>(R.id.btnVerPerfil)
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
         val btnIngresar = findViewById<Button>(R.id.btnIngresar)
-        val btnManageProfiles = findViewById<Button>(R.id.btnManageProfiles) // ya está en el layout
+        val btnAdminPanel = findViewById<Button>(R.id.btnAdminPanel)
 
         if (session.isLoggedIn()) {
             layoutNoSession.visibility = View.GONE
@@ -37,6 +37,13 @@ class WelcomeActivity : AppCompatActivity() {
                 startActivity(Intent(this, MenuActivity::class.java))
                 finish()
             }
+
+            // Botón panel de administración
+            btnAdminPanel.setOnClickListener {
+                startActivity(Intent(this, AdminPanelActivity::class.java))
+            }
+
+
 
             // Botón Ver perfil
             btnVerPerfil.setOnClickListener {
@@ -51,10 +58,9 @@ class WelcomeActivity : AppCompatActivity() {
                 recreate() // recarga la pantalla
             }
 
-            // Botón Administrar Perfiles (CRUD)
-            btnManageProfiles.setOnClickListener {
-                startActivity(Intent(this, UserManagementActivity::class.java))
-            }
+
+
+
 
         } else {
             layoutNoSession.visibility = View.VISIBLE

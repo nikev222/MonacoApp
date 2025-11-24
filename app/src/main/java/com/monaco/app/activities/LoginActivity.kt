@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Toast.makeText(this, "Bienvenido ${user.name}", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, MenuActivity::class.java)
+                    val intent = Intent(this, WelcomeActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

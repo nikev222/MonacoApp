@@ -4,14 +4,13 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     android:orientation="vertical"
-    android:id="@+id/rootLayout"
     android:background="@color/background_light_purple">
 
     <TextView
-        android:id="@+id/tvEditTitle"
+        android:id="@+id/tvStore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_add_product"
+        android:text="@string/agregar_tienda"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/purple_dark"
@@ -19,42 +18,11 @@
         android:gravity="center"
         android:layout_marginBottom="16dp" />
 
-
-    <ImageView
-        android:id="@+id/imageProduct"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/subir_img"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/product_image"
-        android:background="@color/image_background"/>
-
-    <!-- Texto indicativo -->
-    <TextView
-        android:id="@+id/tvSelectImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/selec_local"
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="4dp"/>
-
-    <Button
-        android:id="@+id/btnTakePhoto"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:text="@string/tomar_foto" />
-
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etStoreName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/product_name"
+        android:hint="@string/nombre_tienda"
         android:textColorHint="@color/text_secondary"
         android:textAllCaps="false"
         android:fontFamily="sans-serif-medium"
@@ -62,21 +30,28 @@
         android:backgroundTint="@color/purple_main"
         android:layout_marginBottom="12dp"/>
 
+
+
     <EditText
-        android:id="@+id/etDescription"
+        android:id="@+id/etStoreAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/direccion_tienda"
         android:textColorHint="@color/text_secondary"
-        android:hint="@string/product_description"
         android:textAllCaps="false"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/black"
         android:backgroundTint="@color/purple_main"
-        android:layout_marginBottom="12dp"/>
+        android:layout_marginBottom="12dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:cursorVisible="false"/>
 
     <EditText
-        android:id="@+id/etPrice"
-        android:hint="@string/hint_product_price"
+        android:id="@+id/etLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/latitude"
         android:inputType="numberDecimal"
         android:textAllCaps="false"
         android:textColorHint="@color/text_secondary"
@@ -84,17 +59,40 @@
         android:textColor="@color/black"
         android:backgroundTint="@color/purple_main"
         android:layout_marginBottom="12dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:cursorVisible="false"/>
+
+    <EditText
+        android:id="@+id/etLongitude"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/longitude"
+        android:inputType="numberDecimal"
+        android:textAllCaps="false"
+        android:textColorHint="@color/text_secondary"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginBottom="12dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:cursorVisible="false"/>
+
+    <Button
+        android:id="@+id/btnSelectLocation"
+        android:text="@string/selec_mapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/button_primary"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="12dp" />
+
 
     <Button
         android:id="@+id/btnCancel"

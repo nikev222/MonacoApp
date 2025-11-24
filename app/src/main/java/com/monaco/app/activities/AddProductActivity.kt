@@ -2,24 +2,28 @@ package com.monaco.app.activities
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.monaco.app.R
 import com.monaco.app.data.dao.ProductDAO
 import com.monaco.app.data.models.Product
 import java.io.File
 import java.io.FileOutputStream
+import java.io.InputStream
 
 class AddProductActivity : AppCompatActivity() {
 
     private lateinit var productDAO: ProductDAO
     private var selectedImageUri: Uri? = null
+    private var photoFile: File? = null
     private val PICK_IMAGE_REQUEST = 100
+    private val CAMERA_REQUEST = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +37,27 @@ class AddProductActivity : AppCompatActivity() {
         val imageProduct = findViewById<ImageView>(R.id.imageProduct)
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnCancel = findViewById<Button>(R.id.btnCancel)
+        val btnTakePhoto = findViewById<Button>(R.id.btnTakePhoto)
 
-
+        // Galería
         imageProduct.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, PICK_IMAGE_REQUEST)
+        }
+
+        // Cámara
+        btnTakePhoto.setOnClickListener {
+            val file = File(filesDir, "product_${System.currentTimeMillis()}.jpg")
+            photoFile = file
+            val uri = FileProvider.getUriForFile(
+                this,
+                "${packageName}.fileprovider",
+                file
+            )
+            val intent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+            intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri)
+            startActivityForResult(intent, CAMERA_REQUEST)
         }
 
         btnSave.setOnClickListener {
@@ -57,7 +76,6 @@ class AddProductActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
             val product = Product(
                 name = name,
                 description = description,
@@ -74,39 +92,55 @@ class AddProductActivity : AppCompatActivity() {
             }
         }
 
-        btnCancel.setOnClickListener {
-            finish()
-        }
+        btnCancel.setOnClickListener { finish() }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
-            val imageUri = data?.data ?: return
-            val inputStream = contentResolver.openInputStream(imageUri)
-            val fileName = "product_${System.currentTimeMillis()}.jpg"
-            val file = File(filesDir, fileName)
+        if (resultCode != Activity.RESULT_OK) return
 
-            try {
+        when(requestCode) {
+            PICK_IMAGE_REQUEST -> {
+                val uri = data?.data ?: return
+                val path = copyUriToInternalFile(uri)
+                selectedImageUri = Uri.fromFile(File(path))
+                findViewById<ImageView>(R.id.imageProduct).setImageURI(selectedImageUri)
+            }
 
-                inputStream?.use { input ->
-                    FileOutputStream(file).use { output ->
-                        input.copyTo(output)
-                    }
+            CAMERA_REQUEST -> {
+                photoFile?.let { file ->
+                    val rotatedBitmap = fixImageOrientation(file)
+                    FileOutputStream(file).use { out -> rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out) }
+                    selectedImageUri = Uri.fromFile(file)
+                    findViewById<ImageView>(R.id.imageProduct).setImageBitmap(rotatedBitmap)
                 }
-
-
-                selectedImageUri = Uri.fromFile(file)
-
-
-                val imageProduct = findViewById<ImageView>(R.id.imageProduct)
-                imageProduct.setImageURI(selectedImageUri)
-
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, "Error al cargar la imagen", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun copyUriToInternalFile(uri: Uri): String {
+        val inputStream: InputStream? = contentResolver.openInputStream(uri)
+        val file = File(filesDir, "product_${System.currentTimeMillis()}.jpg")
+        FileOutputStream(file).use { out -> inputStream?.copyTo(out) }
+        inputStream?.close()
+        return file.absolutePath
+    }
+
+    private fun fixImageOrientation(file: File): Bitmap {
+        val exif = ExifInterface(file.absolutePath)
+        val rotation = when(exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)) {
+            ExifInterface.ORIENTATION_ROTATE_90 -> 90f
+            ExifInterface.ORIENTATION_ROTATE_180 -> 180f
+            ExifInterface.ORIENTATION_ROTATE_270 -> 270f
+            else -> 0f
+        }
+
+        val bitmap = android.graphics.BitmapFactory.decodeFile(file.absolutePath)
+        if (rotation == 0f) return bitmap
+
+        val matrix = Matrix()
+        matrix.postRotate(rotation)
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
     }
 }

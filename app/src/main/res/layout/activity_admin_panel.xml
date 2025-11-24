@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_purple"
+    tools:context=".activities.AdminPanelActivity">
+
+    <TextView
+        android:id="@+id/tvAdminTitle"
+        android:text="@string/paneladmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_dark"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnManageUsers"
+        android:text="@string/adminusu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp" />
+
+    <Button
+        android:id="@+id/btnManageStores"
+        android:text="@string/admin_stores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp" />
+
+    <Button
+        android:id="@+id/btnAdminPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/admin_productos"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/purple_main"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp" />
+
+    <Button
+        android:id="@+id/btnBackMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="@color/purple_dark"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/btn_back_menu"
+        android:textColor="@color/white" />
+</LinearLayout>

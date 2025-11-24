@@ -18,7 +18,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var recyclerProducts: RecyclerView
     private lateinit var adapter: ProductAdapter
     private lateinit var btnGoCart: Button
-    private lateinit var btnAdminPanel: Button
+
     private lateinit var tvWelcome: TextView
     private var userId: Int = -1
     private lateinit var btnGoWelcome: Button
@@ -32,8 +32,10 @@ class MenuActivity : AppCompatActivity() {
         recyclerProducts = findViewById(R.id.recyclerProducts)
         btnGoCart = findViewById(R.id.btnGoCart)
         tvWelcome = findViewById(R.id.tvWelcome)
-        btnAdminPanel = findViewById(R.id.btnAdminPanel)
         btnGoWelcome = findViewById(R.id.btnGoWelcome)
+        val btnPuntos = findViewById<Button>(R.id.btnPuntos)
+
+        val intent = intent
 
         userId = intent.getIntExtra("USER_ID", -1)
         tvWelcome.text = "Bienvenido a Mónaco"
@@ -54,10 +56,13 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        btnAdminPanel.setOnClickListener {
-            startActivity(Intent(this, AdminproductosActivity::class.java))
+        btnPuntos.setOnClickListener {
+            val intent = Intent(this, MapStoresActivity::class.java)
+            startActivity(intent)
         }
+
+
+
     }
 
     private fun loadProducts() {

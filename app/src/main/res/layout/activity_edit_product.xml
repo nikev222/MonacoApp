@@ -14,12 +14,16 @@
 
         <TextView
             android:id="@+id/tvEditTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/edit_product_title"
             android:textSize="22sp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/text_primary" />
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
 
 
         <ImageView
@@ -39,7 +43,14 @@
             android:text="@string/btn_change_image"
             android:backgroundTint="@color/button_primary"
             android:textColor="@color/white"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="4dp" />
+
+        <Button
+            android:id="@+id/btnTakePhoto"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tomar_foto" />
 
 
         <EditText

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="@color/background_light_purple">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvEditUserTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_user"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/monaco_dark"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nombre completo -->
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:hint="@string/full_name"
+        android:layout_marginBottom="12dp"/>
+
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:hint="@string/email"
+        android:layout_marginBottom="12dp"
+        android:inputType="textEmailAddress"/>
+
+    <!-- Teléfono -->
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/purple_main"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Botón Guardar -->
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/button_primary"
+        android:textColor="@color/white"/>
+
+    <!-- Botón Cancelar -->
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_cancel"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/button_secondary"
+        android:textColor="@color/white"/>
+</LinearLayout>

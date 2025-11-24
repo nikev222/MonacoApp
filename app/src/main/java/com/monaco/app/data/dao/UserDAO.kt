@@ -10,22 +10,19 @@ class UserDAO(context: Context) {
 
     private val dbHelper = DatabaseHelper(context)
 
-    // Registrar un usuario
     fun registerUser(user: User): Boolean {
         val db = dbHelper.writableDatabase
         val values = ContentValues().apply {
             put("name", user.name)
             put("email", user.email)
             put("password", user.password)
-            put("phone", user.phone) // ✅ nuevo campo
+            put("phone", user.phone)
         }
-
         val result = db.insert("users", null, values)
         db.close()
         return result != -1L
     }
 
-    // Iniciar sesión
     fun loginUser(email: String, password: String): User? {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.rawQuery(
@@ -40,7 +37,7 @@ class UserDAO(context: Context) {
                 name = cursor.getString(cursor.getColumnIndexOrThrow("name")),
                 email = cursor.getString(cursor.getColumnIndexOrThrow("email")),
                 password = cursor.getString(cursor.getColumnIndexOrThrow("password")),
-                phone = cursor.getString(cursor.getColumnIndexOrThrow("phone")) // ✅ recupera teléfono
+                phone = cursor.getString(cursor.getColumnIndexOrThrow("phone"))
             )
         }
 
@@ -49,7 +46,6 @@ class UserDAO(context: Context) {
         return user
     }
 
-    // Obtener todos los usuarios
     fun getAllUsers(): List<User> {
         val db = dbHelper.readableDatabase
         val cursor = db.rawQuery("SELECT * FROM users", null)
@@ -62,7 +58,7 @@ class UserDAO(context: Context) {
                     name = cursor.getString(cursor.getColumnIndexOrThrow("name")),
                     email = cursor.getString(cursor.getColumnIndexOrThrow("email")),
                     password = cursor.getString(cursor.getColumnIndexOrThrow("password")),
-                    phone = cursor.getString(cursor.getColumnIndexOrThrow("phone")) // ✅ agregado
+                    phone = cursor.getString(cursor.getColumnIndexOrThrow("phone"))
                 )
                 users.add(user)
             } while (cursor.moveToNext())
@@ -73,11 +69,39 @@ class UserDAO(context: Context) {
         return users
     }
 
-    // ✅ Eliminar usuario por ID
     fun deleteUser(userId: Int): Boolean {
         val db = dbHelper.writableDatabase
         val result = db.delete("users", "id = ?", arrayOf(userId.toString()))
         db.close()
         return result > 0
     }
+
+    // Obtener la contraseña actual de un usuario
+    fun getUserPassword(userId: Int): String? {
+        val db = dbHelper.readableDatabase
+        val cursor =
+            db.rawQuery("SELECT password FROM users WHERE id = ?", arrayOf(userId.toString()))
+        var password: String? = null
+        if (cursor.moveToFirst()) {
+            password = cursor.getString(cursor.getColumnIndexOrThrow("password"))
+        }
+        cursor.close()
+        db.close()
+        return password
+    }
+
+    // Actualizar usuario sin tocar la contraseña
+    fun updateUser(user: User): Boolean {
+        val db = dbHelper.writableDatabase
+        val values = ContentValues().apply {
+            put("name", user.name)
+            put("email", user.email)
+            put("phone", user.phone)
+            // No se toca la contraseña
+        }
+        val result = db.update("users", values, "id = ?", arrayOf(user.id.toString()))
+        db.close()
+        return result > 0
+    }
 }
+

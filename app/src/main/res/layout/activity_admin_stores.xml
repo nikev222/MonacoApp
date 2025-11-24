@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light_purple"
-    tools:context=".activities.AdminproductosActivity">
+    android:background="@color/background_light_purple">
 
     <TextView
-        android:id="@+id/tvAdminTitle"
-        android:text="@string/admin_title"
+        android:id="@+id/tvAdminStoresTitle"
+        android:text="@string/admin_stores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
@@ -20,10 +20,8 @@
         android:gravity="center"
         android:layout_marginBottom="16dp" />
 
-
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerAdminProducts"
+        android:id="@+id/recyclerAdminStores"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -32,8 +30,8 @@
         android:background="@drawable/recycler_background"/>
 
     <Button
-        android:id="@+id/btnAddProduct"
-        android:text="@string/btn_add_product"
+        android:id="@+id/btnAddStore"
+        android:text="@string/agregar_tienda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -52,5 +50,4 @@
         android:backgroundTint="@color/purple_dark"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="6dp"/>
-
 </LinearLayout>

@@ -50,6 +50,8 @@
     <string name="update">Guardar cambios</string>
     <string name="edit">Editar</string>
     <string name="delete">Eliminar</string>
+    <string name="edit_user">Editar usuario</string>
+
 
 
     <string name="login">Iniciar sesión</string>
@@ -66,9 +68,54 @@
     <string name="manage_profiles">Gestionar perfiles</string>
     <string name="view_profile">Ver perfil</string>
 
+    <!--  Administrar-->
+
+    <string name="paneladmin">Panel de administración</string>
+    <string name="admin_usuario">Gestionar usuarios</string>
+    <string name="adminusu">Administrar usuarios</string>
+
+
+    <!--  tienda -->
+    <string name="admin_stores">Administrar tiendas</string>
+    <string name="agregar_tienda">Agregar tienda</string>
+    <string name="nombre_tienda">Nombre de la tienda</string>
+    <string name="direccion_tienda">Dirección de la tienda</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="lat_lon">Lat: 0.0, Lng: 0.0</string>
+    <string name="puntos">Nuestros puntos</string>
+
+
+    <!--  camara -->
+    <string name="tomar_foto">Tomar Foto</string>
+    <string name="selec_local">Selecciona imagen local</string>
+
+
+
+    <!--  localizacion -->
+
+    <string name="btnlocation">Obtener Ubicación</string>
+    <string name="nobtnlocation">Ubicación no obtenida</string>
+    <string name="titulo_mapa">Ubicaciones de tiendas</string>
+    <string name="usuario_ubicacion">Establecer ubicación</string>
+    <string name="distancia">Distancia: 0.0 km</string>
+    <string name="btn_confirm_location">Confirmar Ubicación</string>
+    <string name="btn_my_location">Mi Ubicación</string>
+
+
+    <!--  mapa -->
+
+    <string name="selec_mapa">Seleccionar en mapa</string>
+
+
+
+
+
 
     <!--  Otros -->
     <string name="first_fragment_label">Inicio</string>
     <string name="second_fragment_label">Detalles</string>
+
+
 
 </resources>

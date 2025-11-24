@@ -49,9 +49,8 @@ class   AdminproductosActivity : AppCompatActivity() {
             startActivity(Intent(this, AddProductActivity::class.java))
         }
 
-        // 🔹 Botón para volver al menú principal
+
         btnBackMenu.setOnClickListener {
-            startActivity(Intent(this, MenuActivity::class.java))
             finish()
         }
     }

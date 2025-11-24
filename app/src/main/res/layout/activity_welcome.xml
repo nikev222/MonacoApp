@@ -104,10 +104,10 @@
             android:layout_marginBottom="12dp" />
 
         <Button
-            android:id="@+id/btnManageProfiles"
+            android:id="@+id/btnAdminPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/manage_profiles"
+            android:text="@string/paneladmin"
             android:backgroundTint="@color/monaco_purple"
             android:textColor="@color/white"
             android:layout_marginBottom="12dp" />
